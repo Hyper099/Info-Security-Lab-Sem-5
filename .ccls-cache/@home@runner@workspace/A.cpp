@@ -1,16 +1,6 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 int main(){
-  int a;
-  cin>>a;
-  vector<int> v(a);
-  for(int i=0;i<a;i++){
-    cin>>v[i];
-  }
-  sort(v.begin(),v.end());
-  for(int i=0;i<a;i++){
-    cout<<v[i]<<" ";
-  }
-  return 0;
+  cout << "HEllow world";
 }
