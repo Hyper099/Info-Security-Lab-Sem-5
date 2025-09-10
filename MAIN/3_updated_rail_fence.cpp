@@ -13,11 +13,18 @@ string encrypt(string plainText, int key) {
     int n = key, m = plainText.length();
     vector<vector<char>> matrix(n, vector<char>(m, '.'));
 
-    int dir = 1, row = 0;
-    for (int col = 0; col < m; col++) {
-        matrix[row][col] = plainText[col];
-        row += dir;
-        if (row == 0 || row == n - 1) dir *= -1;
+    int cnt = 0, flag = 0, i = 0, j = 0;
+    while (j < m) {
+        matrix[i][j] = plainText[j];
+        cnt++;
+        if (cnt >= key) {
+            flag = !flag;
+            cnt = 1;
+        }
+
+        if (!flag) i++;
+        else i--;
+        j++;
     }
 
     vector<int> colPerm = generatePermutation(m, key);

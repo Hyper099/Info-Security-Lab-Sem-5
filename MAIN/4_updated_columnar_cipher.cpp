@@ -11,6 +11,7 @@ vector<int> getKeyOrder(string key) {
     return order;
 }
 
+// pad the plaintext while its not multiple of n.
 string padPlaintext(string plaintext, int blockSize, int seed) {
     srand(seed);
     while (plaintext.size() % blockSize != 0) {
